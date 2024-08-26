@@ -48,17 +48,17 @@ const globalErrorHandler = (err, req, res, next) => {
   // if (process.env.NODE_ENV === "development") {
   sendErrorDev(err, res);
 
-  if (process.env.NODE_ENV === "production") {
-    // let error = { ...err };
-    if (err.name === "ValidationError")
-      sendErrorProd(handleValidationError(err), res);
-    if (err.name === "JsonWebTokenError")
-      sendErrorProd(handleJWTError(err), res);
-    // if (err.code === 20404) sendErrorProd(handleTwilioError(err), res);
-    if (err.name === "TokenExpiredError")
-      sendErrorProd(handleTokenExpireError(err), res);
-    sendErrorProd(err, res);
-  }
+  // if (process.env.NODE_ENV === "production") {
+  //   // let error = { ...err };
+  //   if (err.name === "ValidationError")
+  //     sendErrorProd(handleValidationError(err), res);
+  //   if (err.name === "JsonWebTokenError")
+  //     sendErrorProd(handleJWTError(err), res);
+  //   // if (err.code === 20404) sendErrorProd(handleTwilioError(err), res);
+  //   if (err.name === "TokenExpiredError")
+  //     sendErrorProd(handleTokenExpireError(err), res);
+  //   sendErrorProd(err, res);
+  // }
 };
 
 export default globalErrorHandler;
