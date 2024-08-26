@@ -9,10 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://worldwiseservermysql.onrender.com",
-    ],
+    origin: ["http://localhost:5173", "https://wwvercel-l3km.vercel.app"],
     methods: ["GET", "POST", "DELETE"],
   })
 );
